@@ -1,0 +1,56 @@
+<div class="jumbotron">
+  <h1> Torre: <%= @tower.name %></h1>
+  <p> <strong>Portero:</strong>
+  <%= @tower.porter %></p>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">lista apartamentos</div>
+  <!-- Table -->
+  <table class="table">
+  <tr>
+    <th>Numero Apartamento</th>
+    <th>Piso</th>
+     <th>Propietario</th>
+    <th>Identificacion</th>
+  </tr>
+
+<% @tower.homes.each do |home| %>
+
+<tr>
+    <td><%= home.number %></td>
+    <td><%= home.flat %></td>
+     <td><%= home.owner %></td>
+    <td><%= home.identification %></td>
+    <td><%= link_to 'Eliminar Apartamento', [home.tower, home], method: :delete, data: { confirm: 'estas seguro' } %></td>
+    
+  </tr>
+<% end %>
+</table>
+</div>
+<section>
+<h2>Agregar Apartamentos:</h2>
+<%= form_for([@tower, @tower.homes.build]) do |h| %>
+  <p>
+    <%= h.label :number,"Numero de apartemento" %><br>
+    <%= h.text_field :number %>
+  </p>
+   <p>
+    <%= h.label :flat,"Piso" %><br>
+    <%= h.text_field :flat %>
+  </p>
+  
+   <p>
+    <%= h.label :owner,"Propietario del apartamento" %><br>
+    <%= h.text_field :owner %>
+  </p>
+  <p>
+    <%= h.label :identification,"Identificacion" %><br>
+    <%= h.text_field :identification %>
+  </p>
+  <p>
+    <%= h.submit %>
+  </p>
+<% end %>
+</section>
+ 
+<button type="button" class="btn btn-default navbar-btn"><%= link_to 'Atras', towers_path %></button>

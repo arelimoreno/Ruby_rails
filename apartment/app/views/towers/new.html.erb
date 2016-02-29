@@ -1,0 +1,20 @@
+<h1>Ingrese la torre de la unidad</h1>
+
+<%= form_for @tower do |t| %>
+  <p>
+    <%= t.label :name,"Nombre de la torre" %><br>
+    <%= t.text_field :name %>
+  </p>
+  
+   <p>
+    <%= t.label :porter,"Portero encargado" %><br>
+    <%= t.text_field :porter %>
+  </p>
+  <p>
+    <%= t.submit %>
+  </p>
+<% end %>
+
+
+<button type="button" class="btn btn-default navbar-btn"><%= link_to 'Atras', towers_path %>/button>
+  

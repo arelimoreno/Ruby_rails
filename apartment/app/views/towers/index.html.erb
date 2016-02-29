@@ -1,0 +1,30 @@
+<h1>Bienvenidos a la unidad Flores del bosque</h1>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Registro de Torres</div>
+  <!-- Table -->
+  <table class="table">
+    <tr>
+    <th>Nombre Torre</th>
+    <th>Portero</th>
+  </tr>
+ 
+ <% @tower.each do |tower| %>
+    <tr>
+      <td><%= tower.name %></td>
+      <td><%= tower.porter %></td>
+      <td><%= link_to "Editar", edit_tower_path(tower) %></td>
+      <td><%= link_to 'Show', tower_path(tower) %></td>
+    <td><%= link_to "Eliminar", tower_path(tower),method: :delete, data:{confirm:"estas seguro?"} %></td>
+    </tr>
+  <% end %>
+</table>
+  </table>
+</div>
+
+<button type="button" class="btn btn-default navbar-btn"><%= link_to " Registrar la torre ", new_tower_path %></button>
+  
+
+
+
+	
