@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  apellido: MyString
+  identificacion: MyString
+  telefono: MyString
+  producto: MyString
+  descripcion: MyString
+  fecha: 2016-03-06 18:49:32
+  total: 1
+  cantidad: 1
+  iva: 1.5
+  valor: 1.5
+
+two:
+  nombre: MyString
+  apellido: MyString
+  identificacion: MyString
+  telefono: MyString
+  producto: MyString
+  descripcion: MyString
+  fecha: 2016-03-06 18:49:32
+  total: 1
+  cantidad: 1
+  iva: 1.5
+  valor: 1.5
