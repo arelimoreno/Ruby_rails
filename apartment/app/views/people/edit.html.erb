@@ -1,0 +1,22 @@
+<h1>Editar  Apartamento</h1>
+
+<%= form_for [@tower,@home,@person] do |f| %>
+  <p>
+    <%= f.label :name, "Nombre" %>
+   </p>
+  <p>  <%= f.text_field :name %>
+  </p>
+
+   <p>
+    <%= f.label :ident, "piso" %>
+   </p>
+  <p>  <%= f.text_field :ident %>
+  </p>
+
+   
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Atras', tower_home_people_path %>

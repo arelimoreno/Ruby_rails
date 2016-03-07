@@ -14,7 +14,7 @@
       <td><%= tower.name %></td>
       <td><%= tower.porter %></td>
       <td><%= link_to "Editar", edit_tower_path(tower) %></td>
-      <td><%= link_to 'Show', tower_path(tower) %></td>
+      <td><%= link_to 'Agregar apartamentos', tower_homes_path(tower) %></td>
     <td><%= link_to "Eliminar", tower_path(tower),method: :delete, data:{confirm:"estas seguro?"} %></td>
     </tr>
   <% end %>
@@ -22,7 +22,7 @@
   </table>
 </div>
 
-<button type="button" class="btn btn-default navbar-btn"><%= link_to " Registrar la torre ", new_tower_path %></button>
+<%= link_to " Registrar la torre ", new_tower_path %>
   
 
 

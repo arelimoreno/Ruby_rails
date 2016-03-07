@@ -28,11 +28,7 @@ class TowersController < ApplicationController
 		redirect_to towers_path
 	end
 
-	def show
-		@tower=Tower.find(params[:id])
-		
-	end
-
+	
 	def destroy
 		@tower=Tower.find(params[:id])
 		@tower.destroy

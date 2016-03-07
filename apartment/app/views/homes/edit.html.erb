@@ -1,23 +1,34 @@
 <h1>Editar  Apartamento</h1>
 
-<%= form_for @tower.homes do |home| %>
+<%= form_for [@tower,@home] do |f| %>
   <p>
-    <strong>Numero:</strong>
-    <%= home.number %>
+    <%= f.label :number, "Numero" %>
+   </p>
+  <p>  <%= f.text_field :number %>
   </p>
-  <p>
-    <strong>Piso:</strong>
-    <%= home.flat %>
+
+   <p>
+    <%= f.label :flat, "piso" %>
+   </p>
+  <p>  <%= f.text_field :flat %>
   </p>
-  <p>
-    <strong>Propietario:</strong>
-    <%= home.owner %>
+
+   <p>
+    <%= f.label :owner, "piso" %>
+   </p>
+  <p>  <%= f.text_field :owner %>
   </p>
-  <p>
-    <strong>Identificacion:</strong>
-    <%= home.identification %>
+<p>
+    <%= f.label :identification, "identification" %>
+   </p>
+  <p>  <%= f.text_field :identification %>
   </p>
+
+
+  
   <p>
     <%= f.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Atras', tower_homes_path %>

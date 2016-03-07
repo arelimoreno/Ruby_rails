@@ -6,7 +6,9 @@ Rails.application.routes.draw do
  
   root 'towers#index'
  resources :towers do
-  resources :homes
+  resources :homes do
+    resources :people
+end
 end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

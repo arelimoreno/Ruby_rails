@@ -1,0 +1,49 @@
+<div class="jumbotron">
+  <h1> Apartamento: <%= @home.number %></h1>
+</div>
+<div class="panel panel-primary">
+  <div class="panel-heading">lista Personas</div>
+  <!-- Table -->
+  <table class="table">
+  <tr>
+    <th>Nombre</th>
+    <th>Identificacion</th>
+  </tr>
+
+
+
+
+
+<% @tower.@home.person.each do |people| %>
+
+<tr>
+    <td><%= people.name %></td>
+    <td><%= people.ident %></td>
+   <td><%=link_to 'editar' , edit_tower_home_person_path(@tower,@home, person)%></td>
+    <td><%= link_to 'Eliminar persona', [home.tower.people, home], method: :delete, data: { confirm: 'estas seguro' } %></td>
+    
+  </tr>
+<% end %>
+</table>
+</div>
+
+
+<section>
+<h2>Agregar Apartamentos:</h2>
+<%= form_for([@tower, @home, @home.people.build]) do |h| %>
+  <p>
+    <%= h.label :name,"Nombre" %><br>
+    <%= h.text_field :name %>
+  </p>
+   <p>
+    <%= h.label :ident,"identificacion" %><br>
+    <%= h.text_field :ident %>
+  </p>
+  
+  <p>
+    <%= h.submit %>
+  </p>
+<% end %>
+</section>
+ 
+<%= link_to 'Atras', tower_home_people_path %>
