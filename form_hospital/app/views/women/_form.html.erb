@@ -1,0 +1,139 @@
+
+
+<%= form_tag({controller: "women", action: "respuesta_m"}, method: "get") do %>
+    <div>
+    <%= label_tag :nombre, "Nombre" %><br>
+    <%= text_field_tag :nombre,"", placeholder: "Ingresar Primer Nombre"%> 
+    </div> 
+
+    <p><div>
+    <%= label_tag :seg_nombre, "Segundo Nombre" %><br>
+    <%= text_field_tag :seg_nombre,"", placeholder: "Ingresar Segundo Nombre"%> 
+    </div>
+    </p> 
+
+    <p><div>   
+    <%= label_tag :apellido, "Primer Apellido" %><br>
+    <%= text_field_tag :apellido,"", placeholder: "Ingresar  Primer Apellido" %>      
+    </div>
+    </p>
+
+    <p><div>   
+    <%= label_tag :seg_apellido, "Segundo Apellido" %><br>
+    <%= text_field_tag :seg_apellido,"", placeholder: "Ingresar  Segundo Apellido" %>  
+    </div>
+    </p>
+
+    <p><div>
+    <%= label_tag :identidicacion, "Documento/ C.C." %><br>
+    <%= text_field_tag :identidicacion,"", placeholder: "Ingresar Documento" %>  
+    </div>
+    </p>
+
+     <p><div>
+    <%= label_tag :fecha_nacimiento, "Fecha de nacimiento" %><br>
+    <%= select_date Date.today, prefix: :fecha_nacimiento %>
+    </div>
+    </p>  
+
+     <p><div>
+    <%= label_tag :estado_civil, "Estado Civil" %><br>
+    <%= select_tag :estado_civil, options_for_select(["Casada", "Soltera", "Viuda", "Separada"]) %>
+    </div>
+    </p>
+
+     <p><div>
+    <%= label_tag :grupo_s, "Grupo Sanguineo" %><br>
+    <%= select_tag :grupo_s, options_for_select(["A+", "B+", "AB+", "O+","A-", "B-", "AB-", "O-"]) %>
+    </div>
+    </p>
+
+
+   <p> <div>
+    <%= label_tag :hijo, "Numero de Hijos" %><br>
+    <%= number_field_tag :hijo,"", placeholder: "Cantidad de Hijos" %>    
+    </div>
+    </p>
+
+     <p> <div>
+    <%= label_tag :aborto, "Numero de Abortos" %><br>
+    <%= number_field_tag :aborto,"", placeholder: "Cantidad de Abortos" %>    
+    </div>
+    </p>
+
+    <div>
+      <%= label_tag :problema, "Problemas con algun embarazo, Cual?" %><br>
+      <%= text_area_tag :problema,"", placeholder: "Algun tipo de problema en el embarazo", size: "30x12" %>
+      </div><br>
+
+
+    <p><h2> Antecedentes </h2>
+
+    <div>
+      <%= label_tag :cancer_o, "Tiene o ha sufrido de cancer de ovarios" %>
+      <%= label_tag :cancer_o_si, "Si" %>
+      <%= radio_button_tag :cancer_o, "si" %>
+      <%= label_tag :cancer_o_no, "No" %>
+      <%= radio_button_tag :cancer_o, "no" %>
+      </div><br>
+
+      <div>
+      <%= label_tag :cancer_m, "Tiene o ha sufrido de cancer de ovarios" %>
+      <%= label_tag :cancer_m_si, "Si" %>
+      <%= radio_button_tag :cancer_m, "si" %>
+      <%= label_tag :cancer_m_no, "No" %>
+      <%= radio_button_tag :cancer_m, "no" %>
+      </div><br>
+
+    <div>
+      <%= label_tag :cancer, "Tiene o ha sufrido otro tipo de Cancer" %>
+      <%= label_tag :cancer_si, "Si" %>
+      <%= radio_button_tag :cancer, "si" %>
+      <%= label_tag :cancer_no, "No" %>
+      <%= radio_button_tag :cancer, "no" %>
+      </div><br>
+
+       <div>
+      <%= label_tag :deabetes, "Tiene o ha sufrido de Deabetes" %>
+      <%= label_tag :deabetes_si, "Si" %>
+      <%= radio_button_tag :deabetes, "si" %>
+      <%= label_tag :deabetes_no, "No" %>
+      <%= radio_button_tag :deabetes, "no" %>
+      </div><br>
+
+       <div>
+      <%= label_tag :hiper, "Tiene o sufre de hipertención" %>
+      <%= label_tag :hiper_si, "Si" %>
+      <%= radio_button_tag :hiper, "si" %>
+      <%= label_tag :hiper_no, "No" %>
+      <%= radio_button_tag :hiper, "no" %>
+      </div><br>
+
+      <div>
+      <%= label_tag :alzheimer, "Tiene o sufre de Alzheimer" %>
+      <%= label_tag :alzheimer_si, "Si" %>
+      <%= radio_button_tag :alzheimer, "si" %>
+      <%= label_tag :alzheimer_no, "No" %>
+      <%= radio_button_tag :alzheimer, "no"  %>
+      </div><br>
+
+      <div>
+      <%= label_tag :enfermedad, "Enfermedades o tratamientos actuales" %><br>
+      <%= text_area_tag :enfermedad,"", placeholder: "Enfermedades o tratamientos en los que se encuentre actualmente", size: "30x12" %>
+      </div><br>
+
+
+    <div>
+    <%= label_tag(:terms_conditions, "Desea aceptar los terminos y condiciones?") %>
+    <%= check_box_tag(:terms_conditions) %>
+    
+    </div>
+
+     
+
+    
+    </p>
+    <%= submit_tag "enviar" %>
+
+<% end %>
+

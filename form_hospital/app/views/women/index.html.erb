@@ -1,0 +1,41 @@
+<h1>Registro datos de Mujeres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Segundo Nombre</th>
+      <th>Apellido</th>
+      <th>segundo apellido</th>
+      <th>Documento/ C.C</th>
+      <th>Fecha de nacimiento</th>
+      <th>Estado Civil</th>
+      <th>Numero de  hijos</th>      
+      <th>Numero de Abortos</th>
+      <th>Grupo sanguineo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @informacion.each do |elemento| %>
+
+      <tr>
+        <td><%= elemento.nombre%></td>
+        <td><%= elemento.seg_nombre%></td>
+        <td><%= elemento.apellido %></td>
+        <td><%= elemento.seg_apellido %></td>
+        <td><%= elemento.identidicacion %></td>
+        <td><%= elemento.fecha_nacimiento %></td>
+        <td><%= elemento.estado_civil %></td>
+        <td><%= elemento.hijo %></td>        
+        <td><%= elemento.aborto %></td>
+        <td><%= elemento.grupo_s %></td>
+       
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Registrar muejres', new_woman_path %>

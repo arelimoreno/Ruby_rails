@@ -1,0 +1,42 @@
+<h1>Registro de niños</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Segundo Nombre</th>
+      <th>Apellido</th>
+      <th>segundo apellido</th>
+      <th>Ti / Registro</th>
+      <th>Edad</th>
+      <th>Sexo</th>
+      <th>Fecha de nacimiento</th>
+      <th>Nombre madre</th>
+      <th>Nombre padre</th>
+      <th>Vacunas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @informacion.each do |elemento| %>
+
+      <tr>
+        <td><%= elemento.nombre%></td>
+        <td><%= elemento.seg_nombre%></td>
+        <td><%= elemento.apellido %></td>
+        <td><%= elemento.seg_apellido %></td>
+        <td><%= elemento.registro %></td>
+        <td><%= elemento.edad %></td>
+        <td><%= elemento.Sexo %></td>
+        <td><%= elemento.fecha_nacimiento %></td>
+        <td><%= elemento.madre %></td>
+        <td><%= elemento.padre %></td>
+        <td><%= elemento.vacunas %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Registrar niños', new_child_path %>

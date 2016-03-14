@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  seg_nombre: MyString
+  apellido: MyString
+  seg_apellido: MyString
+  registro: MyString
+  edad: 1
+  fecha_nacimiento: 2016-03-11 17:16:03
+  madre: MyString
+  padre: MyString
+  vacunas: MyString
+  cancer: MyString
+  deabetes: MyString
+  hiper: MyString
+  enfermedad: MyString
+  grupo_s: MyString
+  desnutricion: MyString
+
+two:
+  nombre: MyString
+  seg_nombre: MyString
+  apellido: MyString
+  seg_apellido: MyString
+  registro: MyString
+  edad: 1
+  fecha_nacimiento: 2016-03-11 17:16:03
+  madre: MyString
+  padre: MyString
+  vacunas: MyString
+  cancer: MyString
+  deabetes: MyString
+  hiper: MyString
+  enfermedad: MyString
+  grupo_s: MyString
+  desnutricion: MyString

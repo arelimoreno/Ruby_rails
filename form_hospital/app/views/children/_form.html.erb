@@ -1,0 +1,140 @@
+
+
+<%= form_tag({controller: "children", action: "respuesta"}, method: "get") do %>
+    <div>
+    <%= label_tag :nombre, "Nombre" %><br>
+    <%= text_field_tag :nombre,"", placeholder: "Ingresar  Primer Apellido"%> 
+    </div> 
+
+    <p><div>
+    <%= label_tag :seg_nombre, "Segundo Nombre" %><br>
+    <%= text_field_tag :seg_nombre,"", placeholder: "Ingresar  Primer Apellido"%> 
+    </div>
+    </p> 
+
+    <p><div>   
+    <%= label_tag :apellido, "Primer Apellido" %><br>
+    <%= text_field_tag :apellido,"", placeholder: "Ingresar  Primer Apellido" %>      
+    </div>
+    </p>
+
+    <p><div>   
+    <%= label_tag :seg_apellido, "Segundo Apellido" %><br>
+    <%= text_field_tag :seg_apellido,"", placeholder: "Ingresar  Segundo Apellido" %>  
+    </div>
+    </p>
+
+    <p><div>
+    <%= label_tag :registro, "Ti / Registro civil" %><br>
+    <%= text_field_tag :registro,"", placeholder: "Ingresar Documento" %>  
+    </div>
+    </p>
+
+   <p> <div>
+    <%= label_tag :edad, "Edad" %><br>
+    <%= number_field_tag :edad,"", placeholder: "Edad" %>    
+    </div>
+    </p>
+
+    <p><div>
+    <%= label_tag :fecha_nacimiento, "Fecha de nacimiento" %><br>
+    <%= select_date Date.today, prefix: :fecha_nacimiento %>
+    </div>
+    </p>  
+
+    <p><div>
+    <%= label_tag :sexo, "sexo" %><br>
+    <%= select_tag :sexo, options_for_select(["Femenino", "Masculino"]) %>
+    </div>
+    </p>
+
+    <p><div>
+    <%= label_tag :grupo_s, "Grupo Sanguineo" %><br>
+    <%= select_tag :grupo_s, options_for_select(["A+", "B+", "AB+", "O+","A-", "B-", "AB-", "O-"]) %>
+    </div>
+    </p>
+
+    <p> <div>
+    <%= label_tag :madre, "Nombre de la Madre" %><br>
+    <%= text_field_tag :madre,"", placeholder: "Nombre de la madre" %> <br>     
+    </div>
+    </p>
+
+    <p> <div>
+    <%= label_tag :padre, "Nombre del padre" %><br>
+    <%= text_field_tag :padre,"", placeholder: "Nombre del padre" %>    
+    </div>
+    </p>  
+
+    <p><div>
+        <%= label_tag :vacunas, "Vacunas " %>
+            <br>            
+            <%= label_tag :vacunas, "Polio" %>
+            <%= check_box_tag :vacunas, 'Polio' %>
+
+            <%= label_tag :vacunas, "Varicela" %>
+            <%= check_box_tag :vacunas, 'Varicela' %>
+
+            <%= label_tag :vacunas, "Influenza" %>
+            <%= check_box_tag :vacunas, 'Influenza' %>
+
+            <%= label_tag :vacunas_s, "Sarampion" %>
+            <%= check_box_tag :vacunas, 'Sarampion' %>
+     </div>
+     </p>
+
+    <p><h2> Antecedentes </h2> 
+    <div>
+      <%= label_tag :cancer, "Tiene o ha sufrido de cancer" %>
+      <%= label_tag :cancer_si, "Si" %>
+      <%= radio_button_tag :cancer, "si" %>
+      <%= label_tag :cancer_no, "No" %>
+      <%= radio_button_tag :cancer, "no" %>
+      </div><br>
+
+       <div>
+      <%= label_tag :deabetes, "Tiene o ha sufrido de Deabetes" %>
+      <%= label_tag :deabetes_si, "Si" %>
+      <%= radio_button_tag :deabetes, "si" %>
+      <%= label_tag :deabetes_no, "No" %>
+      <%= radio_button_tag :deabetes, "no" %>
+      </div><br>
+
+     
+
+       <div>
+      <%= label_tag :hiper, "Tiene o sufre de hipertención" %>
+      <%= label_tag :hiper_si, "Si" %>
+      <%= radio_button_tag :hiper, "si" %>
+      <%= label_tag :hiper_no, "No" %>
+      <%= radio_button_tag :hiper, "no" %>
+      </div><br>
+
+      <div>
+      <%= label_tag :desnutricion, "Tiene o sufre de Desnutrición" %>
+      <%= label_tag :desnutricion_si, "Si" %>
+      <%= radio_button_tag :desnutricion, "si" %>
+      <%= label_tag :desnutricion_no, "No" %>
+      <%= radio_button_tag :desnutricion, "no"  %>
+      </div><br>
+
+      <div>
+      <%= label_tag :enfermedad, "Otra Enfermedad, cual?" %><br>
+      <%= text_area_tag :enfermedad,"", placeholder: "Otras Enfermedades", size: "30x12" %>
+      </div><br>
+
+
+    <div>
+    <%= label_tag(:terms_conditions, "Desea aceptar los terminos y condiciones?") %>
+    <%= check_box_tag(:terms_conditions) %>
+    
+    </div>
+
+     
+
+    
+    </p>
+    <%= submit_tag "enviar" %>
+
+<% end %>
+
