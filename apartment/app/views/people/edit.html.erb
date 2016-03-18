@@ -1,6 +1,6 @@
-<h1>Editar  Apartamento</h1>
+<h1>Editar persona</h1>
 
-<%= form_for [@tower,@home,@person] do |f| %>
+<%= form_for [@tower,@home, @person] do |f| %>
   <p>
     <%= f.label :name, "Nombre" %>
    </p>
@@ -8,12 +8,11 @@
   </p>
 
    <p>
-    <%= f.label :ident, "piso" %>
+    <%= f.label :ident, "Identificacion" %>
    </p>
   <p>  <%= f.text_field :ident %>
   </p>
-
-   
+  
   <p>
     <%= f.submit %>
   </p>

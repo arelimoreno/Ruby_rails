@@ -1,5 +1,7 @@
 <div class="jumbotron">
-  <h1> Apartamento: <%= @home.number %></h1>
+  <h1>Torre: <%= @tower.name%> <br> Apartamento: <%= @home.number %></h1>
+  <h2>propietario:</h2>
+  <P><%= @home.owner %></P>
 </div>
 <div class="panel panel-primary">
   <div class="panel-heading">lista Personas</div>
@@ -11,17 +13,12 @@
   </tr>
 
 
-
-
-
-<% @tower.@home.person.each do |people| %>
+<% @person.each do |people| %>
 
 <tr>
     <td><%= people.name %></td>
     <td><%= people.ident %></td>
-   <td><%=link_to 'editar' , edit_tower_home_person_path(@tower,@home, person)%></td>
-    <td><%= link_to 'Eliminar persona', [home.tower.people, home], method: :delete, data: { confirm: 'estas seguro' } %></td>
-    
+   <td><%=link_to 'editar' , edit_tower_home_person_path(@tower,@home,people)%></td>    
   </tr>
 <% end %>
 </table>
@@ -29,15 +26,15 @@
 
 
 <section>
-<h2>Agregar Apartamentos:</h2>
+<h2>Agregar personas:</h2>
 <%= form_for([@tower, @home, @home.people.build]) do |h| %>
   <p>
     <%= h.label :name,"Nombre" %><br>
     <%= h.text_field :name %>
   </p>
    <p>
-    <%= h.label :ident,"identificacion" %><br>
-    <%= h.text_field :ident %>
+    <%= h.label :ident,"Identificacion" %><br>
+    <%= h.text_field :ident%>
   </p>
   
   <p>
