@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @passport.tipo %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @passport.precio %>
+</p>
+
+<p>
+  <strong>Route:</strong>
+  <%= @passport.route.vias %>
+</p>
+
+<%= link_to 'Edit', edit_passport_path(@passport) %> |
+<%= link_to 'Back', passports_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @airplane.codigo %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @airplane.nombre %>
+</p>
+
+<p>
+  <strong>Modelo:</strong>
+  <%= @airplane.modelo %>
+</p>
+
+<p>
+  <strong>Aerolinea:</strong>
+  <%= @airplane.aerolinea %>
+</p>
+
+<p>
+  <strong>Capacidad:</strong>
+  <%= @airplane.capacidad %>
+</p>
+
+
+<%= link_to 'Edit', edit_airplane_path(@airplane) %> |
+<%= link_to 'Back', airplanes_path %>

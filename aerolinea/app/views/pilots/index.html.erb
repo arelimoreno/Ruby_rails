@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Lista de pilotos </h1>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Identificacion</th>
+      <th>Cargo</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pilots.each do |pilot| %>
+      <tr>
+        <td><%= pilot.nombre %></td>
+        <td><%= pilot.apellido %></td>
+        <td><%= pilot.identificacion %></td>
+        <td><%= pilot.cargo %></td>
+        <td><%= link_to 'Mirar', pilot %></td>
+        <td><%= link_to 'Editar', edit_pilot_path(pilot) %></td>
+        <td><%= link_to 'Eliminar', pilot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'Nuevo piloto', new_pilot_path %>

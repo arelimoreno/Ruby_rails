@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista Aviones</h1>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Informacion aviones</div>
+  <!-- Table -->
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Codigo</th>
+      <th>Nombre</th>
+      <th>Modelo</th>
+      <th>Aerolinea</th>
+      <th>Capacidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airplanes.each do |airplane| %>
+      <tr>
+        <td><%= airplane.codigo %></td>
+        <td><%= airplane.nombre %></td>
+        <td><%= airplane.modelo %></td>
+        <td><%= airplane.aerolinea %></td>
+        <td><%= airplane.capacidad %></td>
+        <td><%= link_to 'Show', airplane %></td>
+        <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
+        <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'Nuevo avion', new_airplane_path %>

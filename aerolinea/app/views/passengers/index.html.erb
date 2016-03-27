@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lista Pasajeros</h1>
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Tequetes</div>
+  <!-- Table -->
+  <table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Identificacion</th>
+      <th>Edad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @passengers.each do |passenger| %>
+      <tr>
+        <td><%= passenger.nombre %></td>
+        <td><%= passenger.apellido %></td>
+        <td><%= passenger.identificacion %></td>
+        <td><%= passenger.edad %> Años</td>
+        <td><%= link_to 'Informacion completa', passenger %></td>
+        <td><%= link_to 'Editar', edit_passenger_path(passenger) %></td>
+        <td><%= link_to 'Eliminar', passenger, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+<%= link_to 'Nuevo pasajero', new_passenger_path %>
