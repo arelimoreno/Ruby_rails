@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @homework.tema %>
+</p>
+
+<p>
+  <strong>Pregunta:</strong>
+  <%= @homework.pregunta %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @homework.subject.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_homework_path(@homework) %> |
+<%= link_to 'Atras', homeworks_path %>

@@ -1,0 +1,44 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :apellido %><br>
+    <%= f.text_field :apellido %>
+  </div>
+  <div class="field">
+    <%= f.label :identificacion %><br>
+    <%= f.text_field :identificacion %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha_nacimiento %><br>
+    <%= f.date_select :fecha_nacimiento,:default => Time.now %>
+  </div>
+
+  <div class="field">
+    <%= f.label :foto, "Foto de perfil" %><br>
+    <%= f.file_field :foto%>
+  </div>
+
+<div class="field">
+    <%= f.label :subjects, "Asignatura" %><br>
+    <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :nombre %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

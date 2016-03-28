@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Teachers</h1>
+
+<table>
+  <thead>
+    <tr>
+     <th>Perfil</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Identificacion</th>
+      <th>Edad</th>
+      <th>Asignatura</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= image_tag(teacher.perfil_url, :width => 70, :height => 70) if teacher.perfil? %></td>
+        <td><%= teacher.nombre %></td>
+        <td><%= teacher.apellido %></td>
+        <td><%= teacher.identificacion %></td>
+        <td><%= teacher.edad %></td>
+         <td><%= teacher.subject.nombre %></td>
+         <td><%= link_to 'Agregar tareas', new_homework_path %></td> 
+         <td><%= link_to 'Mirar respuestas', answers_path %></td>         
+        <td><%= link_to 'Mirar', teacher %></td>
+        <td><%= link_to 'Editar', edit_teacher_path(teacher) %></td>
+        <td><%= link_to 'Elimminar', teacher, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar nuevo profesor', new_teacher_path %>

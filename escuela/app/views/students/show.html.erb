@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <%= image_tag(@student.foto_url, :width => 170, :height => 190) if @student.foto? %>
+  <strong> Foto de Perfil:</strong>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @student.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @student.apellido %>
+</p>
+
+<p>
+  <strong>Identificacion:</strong>
+  <%= @student.identificacion %>
+</p>
+
+<p>
+  <strong>Fecha nacimiento:</strong>
+  <%= @student.fecha_nacimiento %>
+</p>
+
+<p><strong>Asignaturas:</strong>
+<% @student.subjects.each do |asignatura| %>  
+  <lu>
+  <li><%= asignatura.nombre %></li>
+  </lu>
+ <% end %> 
+
+</p>
+
+<%= link_to 'Editar', edit_student_path(@student) %> |
+<%= link_to 'Mostrar', students_path %>

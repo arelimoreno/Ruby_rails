@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ <%= image_tag(@teacher.perfil_url, :width => 170, :height => 190) if @teacher.perfil? %>
+  <strong> Foto de Perfil:</strong>
+</p>
+<p>
+  <strong>Nombre:</strong>
+  <%= @teacher.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @teacher.apellido %>
+</p>
+
+<p>
+  <strong>Identificacion:</strong>
+  <%= @teacher.identificacion %>
+</p>
+
+<p>
+  <strong>Edad:</strong>
+  <%= @teacher.edad %>
+</p>
+
+<p><strong>Asignarura:</strong>
+<%= @teacher.subject.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_teacher_path(@teacher) %> |
+<%= link_to 'Atras', teachers_path %>

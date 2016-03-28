@@ -1,0 +1,30 @@
+<%= form_for(@homework) do |f| %>
+  <% if @homework.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@homework.errors.count, "error") %> prohibited this homework from being saved:</h2>
+
+      <ul>
+      <% @homework.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+  <%= f.label :subject, "signatura" %>
+  <%= f.select :subject_id, Subject.all.collect {|c| [c.nombre, c.id]} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tema %><br>
+    <%= f.text_field :tema %>
+  </div>
+  <div class="field">
+    <%= f.label :pregunta %><br>
+    <%= f.text_area :pregunta %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
